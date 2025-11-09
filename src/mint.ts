@@ -7,7 +7,6 @@ async function main() {
   const secretKey = JSON.parse(
     fs.readFileSync(`${process.env.HOME}/.config/solana/devnet.json`, "utf8")
   );
-
   const umi = createUmi("https://api.devnet.solana.com");
 
   const keypair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(secretKey));
@@ -27,13 +26,13 @@ async function main() {
     authority: mySigner,
   }).sendAndConfirm(umi);
 
-  console.log("✅ NFT Minted Successfully!");
+  console.log("NFT Minted Successfully!");
   console.log("Transaction Signature:", tx.signature);
-  console.log("\n🔗 View your NFT on:");
-  console.log(`Solana Explorer: https://explorer.solana.com/address/${assetSigner.publicKey}?cluster=devnet`);
-  console.log(`Solscan: https://solscan.io/token/${assetSigner.publicKey}?cluster=devnet`);
-  console.log(`XRAY: https://xray.helius.xyz/token/${assetSigner.publicKey}?network=devnet`);
-  console.log("\n⏱️ Note: It may take 5-15 minutes for the image to appear in explorers.");
+  console.log("\nView your NFT on:");
+  console.log(`  Solana Explorer: https://explorer.solana.com/address/${assetSigner.publicKey}?cluster=devnet`);
+  console.log(`  Solscan: https://solscan.io/token/${assetSigner.publicKey}?cluster=devnet`);
+  console.log(`  XRAY: https://xray.helius.xyz/token/${assetSigner.publicKey}?network=devnet`);
+  console.log("\nNote: It may take 5-15 minutes for the image to appear in explorers.");
 }
 
 main().catch(console.error);
