@@ -9,6 +9,7 @@ A TypeScript-based NFT minting project using Metaplex Core on Solana Devnet. Thi
 **NFT Address:** `DWg7yXez1rGC9DZNM9ksAuN7sMb21yxvwGbsqnJ4TwzY`
 
 **View on Explorers:**
+- [Metaplex Core Explorer](https://core.metaplex.com/explorer/DWg7yXez1rGC9DZNM9ksAuN7sMb21yxvwGbsqnJ4TwzY?env=devnet) (Recommended for Core NFTs)
 - [Solscan](https://solscan.io/token/DWg7yXez1rGC9DZNM9ksAuN7sMb21yxvwGbsqnJ4TwzY?cluster=devnet)
 - [XRAY](https://xray.helius.xyz/token/DWg7yXez1rGC9DZNM9ksAuN7sMb21yxvwGbsqnJ4TwzY?network=devnet)
 - [Solana Explorer](https://explorer.solana.com/address/DWg7yXez1rGC9DZNM9ksAuN7sMb21yxvwGbsqnJ4TwzY?cluster=devnet)
@@ -120,7 +121,19 @@ Key parameters in `mint.ts`:
 |-----------|-------------|---------|
 | `name` | NFT name | "Nebula NFT #1" |
 | `uri` | Metadata URI (Pinata/IPFS) | Your Pinata link |
-| `sellerFeeBasisPoints` | Royalty percentage (500 = 5%) | 500 |
+| `plugins.Royalties.basisPoints` | Royalty percentage (500 = 5%) | 500 |
+| `plugins.Royalties.creators` | Array of creator addresses and percentages | Your wallet at 100% |
+| `plugins.Royalties.ruleSet` | Royalty enforcement rule | "None" |
+
+### Royalty Configuration
+
+Core NFTs use the **Royalties Plugin** to set creator royalties. The configuration includes:
+
+- **basisPoints**: Royalty percentage (100 basis points = 1%)
+  - Example: 500 = 5%, 450 = 4.5%, 1000 = 10%
+- **creators**: Array of creator addresses with their percentage split
+  - Total percentages must equal 100
+- **ruleSet**: Enforcement rules ("None", "ProgramAllowList", "ProgramDenyList")
 
 ## Tech Stack
 
@@ -139,7 +152,7 @@ If your NFT minted successfully but the image doesn't appear:
 
 1. Wait 15-30 minutes for explorers to index metadata from IPFS
 2. Clear browser cache and refresh
-3. Try alternative explorers (Solscan or XRAY work better for Core NFTs)
+3. Try Metaplex Core Explorer (best for Core NFTs) or alternative explorers like Solscan and XRAY
 4. Verify metadata URI is publicly accessible
 5. Check that image URL loads in browser
 
@@ -156,6 +169,7 @@ If your NFT minted successfully but the image doesn't appear:
 
 - [Solana Documentation](https://docs.solana.com/)
 - [Metaplex Core Docs](https://developers.metaplex.com/core)
+- [Metaplex Core Explorer](https://core.metaplex.com/explorer)
 - [Pinata Docs](https://docs.pinata.cloud/)
 - [Solana Explorer](https://explorer.solana.com/)
 
