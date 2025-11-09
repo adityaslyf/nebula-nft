@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* Output directories */
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    /* Module & Target */
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    /* Node compatibility */
+    "types": ["node"],
+    "lib": ["esnext"],
+
+    /* TypeScript behavior */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+
+    /* Useful flags */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Optional strictness */
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* JSX not needed (we’re not using React here) */
+    "jsx": "preserve"
+  },
+  "include": ["src"]
+}

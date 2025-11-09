@@ -1,0 +1,20 @@
+{
+  "name": "Nebula NFT #1",
+  "symbol": "NEBULA",
+  "description": "A cosmic NFT minted on Solana Devnet by Aditya Varshney",
+  "image": "https://scarlet-imaginative-guineafowl-522.mypinata.cloud/ipfs/bafkreieq5sqq6dunimmqiwj72m3jkgwyjarqnxjvo7d5puvl6fru7fzon4",
+  "external_url": "",
+  "attributes": [
+    { "trait_type": "Energy", "value": "High" },
+    { "trait_type": "Rarity", "value": "Legendary" }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://scarlet-imaginative-guineafowl-522.mypinata.cloud/ipfs/bafkreieq5sqq6dunimmqiwj72m3jkgwyjarqnxjvo7d5puvl6fru7fzon4",
+        "type": "image/jpeg"
+      }
+    ],
+    "category": "image"
+  }
+}
