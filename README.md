@@ -60,11 +60,14 @@ solana airdrop 2 --keypair ~/.config/solana/devnet.json
 ```
 nft-mint/
 ├── src/
-│   └── mint.ts          # Main minting script
-├── metadata.json        # NFT metadata template
-├── package.json         # Project dependencies
-├── tsconfig.json        # TypeScript configuration
-└── README.md           # This file
+│   ├── mint.ts              # Main minting script
+│   ├── list-for-sale.ts     # Generate listing message
+│   └── transfer-nft.ts      # Transfer NFT to buyer
+├── metadata.json            # NFT metadata template
+├── package.json             # Project dependencies
+├── tsconfig.json            # TypeScript configuration
+├── SELLING-GUIDE.md         # Guide for selling NFTs
+└── README.md               # This file
 ```
 
 ## NFT Metadata
@@ -112,6 +115,34 @@ npx tsx src/mint.ts
 ```
 
 5. Wait for confirmation and check the console output for your NFT address and explorer links
+
+## Selling Your NFT
+
+### Generate Listing Message
+
+Create a formatted message for Discord or social media:
+```bash
+npx tsx src/list-for-sale.ts
+```
+
+Edit the script to set your NFT address and price.
+
+### Transfer to Buyer
+
+After receiving payment, transfer the NFT:
+```bash
+npx tsx src/transfer-nft.ts
+```
+
+**Important:** Always verify payment before transferring!
+
+### Full Selling Guide
+
+See [SELLING-GUIDE.md](./SELLING-GUIDE.md) for detailed instructions on:
+- Using marketplaces (mainnet)
+- P2P sales on devnet
+- Safety tips
+- Pricing strategies
 
 ## Configuration
 
